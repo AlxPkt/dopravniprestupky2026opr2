@@ -6,7 +6,11 @@ public class ProhibitorySign extends TrafficSign {
         this.forbiddenAction = forbiddenAction;
     }
 
-    public Action getForbiddenAction() {
-        return forbiddenAction;
+    @Override
+    public String checkViolation(Car car, String locationName) {
+        if (car.getCurrentAction() == forbiddenAction) {
+            return "Pokuta: Porušení zákazu '" + name + "' v lokaci " + locationName + ".";
+        }
+        return null;
     }
 }
