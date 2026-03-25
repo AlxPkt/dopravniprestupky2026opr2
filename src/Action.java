@@ -1,6 +1,7 @@
 public enum Action {
     PARKING,
-    TURNING,
-    DRIVING,
+    TURNING_LEFT,
+    TURNING_RIGHT,
+    DRIVING_STRAIGHT,
     NONE
 }
