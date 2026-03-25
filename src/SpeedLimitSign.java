@@ -1,9 +1,15 @@
-public class SpeedLimitSign extends TrafficSign {
+public class SpeedLimitSign implements TrafficSign {
+    private String name;
     private int maxSpeed;
 
     public SpeedLimitSign(String name, int maxSpeed) {
-        super(name);
+        this.name = name;
         this.maxSpeed = maxSpeed;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
     @Override

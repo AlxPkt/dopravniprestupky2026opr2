@@ -1,9 +1,15 @@
-public class ProhibitorySign extends TrafficSign {
+public class ProhibitorySign implements TrafficSign {
+    private String name;
     private Action forbiddenAction;
 
     public ProhibitorySign(String name, Action forbiddenAction) {
-        super(name);
+        this.name = name;
         this.forbiddenAction = forbiddenAction;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
     @Override
