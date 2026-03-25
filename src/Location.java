@@ -3,11 +3,10 @@ import java.util.List;
 
 public class Location {
     private String name;
-    private List<TrafficSign> signs;
+    private List<TrafficSign> signs = new ArrayList<>();
 
     public Location(String name) {
         this.name = name;
-        this.signs = new ArrayList<>();
     }
 
     public void addSign(TrafficSign sign) {
