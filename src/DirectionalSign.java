@@ -1,8 +1,17 @@
 public class DirectionalSign extends TrafficSign {
-    private String direction;
+    private Action requiredAction;
 
-    public DirectionalSign(String name, String direction) {
+    public DirectionalSign(String name, Action requiredAction) {
         super(name);
-        this.direction = direction;
+        this.requiredAction = requiredAction;
+    }
+
+    @Override
+    public String checkViolation(Car car, String locationName) {
+
+        if (car.getCurrentAction() != requiredAction && car.getCurrentAction() != Action.PARKING) {
+            return "Pokuta: Nerespektování směrové značky '" + name + "' v lokaci " + locationName + ".";
+        }
+        return null;
     }
 }
