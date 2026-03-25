@@ -1,11 +1,9 @@
 public abstract class TrafficSign {
-    private String name;
+    protected String name;
 
     public TrafficSign(String name) {
         this.name = name;
     }
 
-    public String getName() {
-        return name;
-    }
+    public abstract String checkViolation(Car car, String locationName);
 }
